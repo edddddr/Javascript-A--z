@@ -1,5 +1,4 @@
-'use strict'
-
+"use strict";
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -23,6 +22,7 @@ HINT: To check if number A is at least double number B, check for A >= 2 * B. Ap
 
 GOOD LUCK 😀
 */
+/*
 const calcAverage = (v1,v2,v3) => (v1+v2+v3) / 3 ;
 
 const dolphinsAVG = calcAverage(44, 23, 71)
@@ -31,7 +31,7 @@ const koalasAVG = calcAverage(44, 23, 71)
 // console.log(dolphinsAVG, koalasAVG)
 
 const checkWinner = function(dolphins, koalas){
-
+    
     let result
 
     if(dolphins >= 2 * koalas){
@@ -40,9 +40,10 @@ const checkWinner = function(dolphins, koalas){
         result = `Koalas win (${koalas } vs ${dolphins})`}else{
             result ="No one wins the battle"
         }
-
+        
         return result;
     }
     
-
+    
     console.log(checkWinner())
+    */
