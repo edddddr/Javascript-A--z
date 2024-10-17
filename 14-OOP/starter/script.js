@@ -69,7 +69,7 @@ DATA CAR 1: 'Tesla' going at 120 km/h, with a charge of 23%
 
 GOOD LUCK 😀
 */
-
+/*
 const Car = function (mak, speed) {
   this.speed = speed;
   this.mak = mak;
@@ -96,7 +96,70 @@ const Ev = function (speed, battery, charge) {
 };
 
 const tesla = new Ev('Tesla', 69, 20);
-
+*/
 // EV.accelerate();
 // EV.chargerBattery();
+
 // const Ev = function()
+
+///////////////////////////////////////
+// Coding Challenge #4
+
+/* 
+1. Re-create challenge #3, but this time using ES6 classes: create an 'EVCl' child class of the 'CarCl' class
+2. Make the 'charge' property private;
+3. Implement the ability to chain the 'accelerate' and 'chargeBattery' methods of this class, and also update the 'brake' method in the 'CarCl' class. They experiment with chining!
+
+DATA CAR 1: 'Rivian' going at 120 km/h, with a charge of 23%
+
+GOOD LUCK 😀
+*/
+
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+
+    // console.log(this.make, this.make);
+  }
+
+  accelerate() {
+    this.speed += 20;
+    return;
+  }
+
+  brake() {
+    this.speed -= 10;
+    return;
+  }
+}
+
+class EvCl extends CarCl {
+  #charge;
+  constructor(make, speed, chargerTo) {
+    super(make, speed);
+    this.#charge = chargerTo;
+  }
+
+  accelerate() {
+    this.speed += 20;
+    console.log(
+      `${this.make} going at ${this.speed} km/h, with a charge of ${
+        this.#charge
+      }`
+    );
+    return;
+  }
+
+  brake() {
+    this.speed -= 10;
+    return;
+  }
+}
+const Rivian = new EvCl('Rivian', 200, 24);
+const mono = new CarCl('marc', 200);
+mono.accelerate();
+
+Rivian.accelerate();
+
+// console.log(EvCl.__proto__);
